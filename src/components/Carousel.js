@@ -2,10 +2,12 @@ import React from "react"
 
 function Carousel(props) {
     const carouselItems = props.carouselArray.map(item =>
-        <img 
-        src={item.itemContent}
-        alt="no image"
-        className={item.isVisible ? "carousel-item carousel-item-visible" : "carousel-item"}/>)
+        <a href={item.itemLink} target="_blank">
+            <img 
+            src={item.itemContent}
+            alt="no image"
+            className={item.isVisible ? "carousel-item carousel-item-visible" : "carousel-item"}/>
+        </a>)
     return (
         <div className="carousel">
             {carouselItems}
